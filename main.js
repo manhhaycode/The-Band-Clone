@@ -48,6 +48,7 @@ const slider = document.getElementById('slider');
 const textContents = document.getElementsByClassName('text-content');
 const backGroundImg = ['los-angeles', 'new-york', 'chicago'];
 autoSlide();
+setInterval(autoSlide, 4000);
 function autoSlide(){
     for(let i = 0; i < textContents.length; i++){
         textContents[i].style.display = 'none';
@@ -56,5 +57,4 @@ function autoSlide(){
     textContents[index].style.display = 'block';
     slider.classList.add(backGroundImg[index++]);
     if(index == textContents.length){index=0}
-    setTimeout(autoSlide, 4000);
 }
